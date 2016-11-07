@@ -75,14 +75,56 @@ class Array {
 		
 		
 		/*1.定义一个函数，接受一个int类型的数组对象，找出数组对象中的最大元素，返回给调用者。*/
-		int[] arr = {12,134,5,6,5};
-		getMax();
-		
-		
-		public static int getMax(int[] arr){
-			
-		}
-		
-		
+		int[] arr = {12,134,155,6,5};	
+		int maxNum = getMax(arr);
+		//selectSort(arr); //直接排序
+		bubbling(arr);
+		System.out.println("最大值为"+maxNum);
 	}
+	
+	/*找出最大值*/
+	public static int getMax(int[] arr){
+		int max = arr[0];
+		for(int i = 1;i<arr.length;i++){
+			if(arr[i]>=max){
+				max = arr[i];
+			}
+		}
+		return max;
+	}
+	
+	/*选择排序*/
+	/*public static void selectSort(int[] arr){
+		for(int j = 0;j<arr.length-1;j++){
+			for(int i = j+1;i<arr.length;i++){
+				if(arr[j]<arr[i]){
+					int temp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = temp;
+				}
+			}
+		}
+		System.out.println("数组排序为");
+		for(int i = 0;i<arr.length;i++){
+			System.out.println(": "+arr[i]+";");
+		}
+	}*/
+	
+	/*冒泡排序*/
+	public static void bubbling(int[] arr){
+		for(int j = 0;j<arr.length-1;j++){
+			for(int i = 0;i<arr.length-1-j;i++){
+				if(arr[i+1]<arr[i]){
+					int temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+				}
+			}
+		}
+		System.out.println("从小到大的冒泡排序");
+		for(int i = 0;i<arr.length;i++){
+			System.out.println(arr[i]);
+		}
+	}
+	
 }
