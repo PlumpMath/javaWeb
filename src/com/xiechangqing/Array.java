@@ -1,5 +1,5 @@
 package com.xiechangqing;
-import java.util.*;
+/*import java.util.*;*/
 class Array {
 	/*
 	  数组是同一种数据类型的集合container
